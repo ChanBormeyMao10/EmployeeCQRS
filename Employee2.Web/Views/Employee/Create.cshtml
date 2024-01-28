@@ -1,0 +1,23 @@
+﻿@model Employee2.NewEmployee
+
+@{
+    ViewBag.Title = "Create NEw Employee";
+}
+
+<fieldset>
+    <div>
+        @using (Html.BeginForm())
+        {
+            <fieldset>
+                <label>Name</label>
+                @Html.TextBoxFor(m => m.Name)
+                <label>Role</label>
+                @Html.EnumDropDownListFor(m => m.role)
+                <label>Branch</label>
+                @Html.EnumDropDownListFor(m => m.workingBranch)
+                <button type="submit" class="btn">Submit</button>
+            </fieldset>
+        }
+    </div>
+</fieldset>
+

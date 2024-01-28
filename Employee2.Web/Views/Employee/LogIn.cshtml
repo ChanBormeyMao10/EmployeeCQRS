@@ -1,0 +1,19 @@
+﻿@model Employee2.ReadModels.Employee
+@{
+    ViewBag.Title = "LogIn";
+}
+
+<h2>LogIn</h2>
+
+<fieldset>
+    <div>
+        @using (Html.BeginForm())
+        {
+            <fieldset>
+                <label>Employee Name</label>
+                @Html.TextBoxFor(m => m.Name)
+                <button type="submit" class="btn">Submit</button>
+            </fieldset>
+        }
+    </div>
+</fieldset>

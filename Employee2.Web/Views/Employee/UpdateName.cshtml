@@ -1,0 +1,22 @@
+﻿@model Employee2.UpdateName
+@{
+    ViewBag.Title = "Update Name";
+}
+
+
+@*Only Manager role can access this page*@
+
+<fieldset>
+    <div>
+        @using (Html.BeginForm())
+        {
+            <fieldset>
+                @Html.HiddenFor(m => m.Id)
+                <label>New Name</label>
+                @Html.TextBoxFor(m => m.NewName)
+                <button type="submit" class="btn">Submit</button>
+            </fieldset>
+        }
+    </div>
+</fieldset>
+

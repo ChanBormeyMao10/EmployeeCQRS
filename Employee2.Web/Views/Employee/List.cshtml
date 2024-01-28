@@ -1,0 +1,56 @@
+﻿
+
+@model List<Employee2.ReadModels.Employee>
+@{
+    ViewBag.Title = "List of all employee";
+}
+
+@*needs to be a manager to acccess this page*@
+
+<section>
+    <h4>Employee List</h4>
+    <hr />
+    <button type="button" class="btn btn-danger">
+        @Html.ActionLink("Create a New Employee", "Create")
+    </button>
+    <button type="button" class="btn btn-danger">
+        <i class="fa-solid fa-user"></i>
+        @Html.ActionLink("Profile", "Profile", new { Id = ViewBag.ManagerId })
+    </button>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var w in Model)
+            {
+                <tr>
+                    <td>
+                        <span>@w.Name</span>
+                    </td>
+                    <td>
+                        <span>@w.role</span>
+
+                    </td>
+                    <td>
+                        <div class="btn btn-warning">@Html.ActionLink("Update Name", "UpdateName", new { id = w.Id })</div>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger">
+                            @Html.ActionLink("Update Role", "UpdateRole", new { Id = w.Id })
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <p>
+        @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |*@
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</section>
+
+

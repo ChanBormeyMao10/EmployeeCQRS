@@ -1,0 +1,10 @@
+﻿{
+  "modules": [
+    {
+      "type": "CRG.ES.ClientAPI.EventStoreConfig, CRG.ES.ClientAPI",
+      "properties": {
+        "BasePort": "9000"
+      }
+    }
+  ]
+}

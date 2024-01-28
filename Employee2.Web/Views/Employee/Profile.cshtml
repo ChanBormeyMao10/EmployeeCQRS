@@ -1,0 +1,42 @@
+﻿
+@model Employee2.ReadModels.Employee
+@{
+    ViewBag.Title = "Profile";
+}
+
+@*needs to be a manager to acccess this page*@
+
+<section>
+    <h4>Profile</h4>
+    <hr />
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Role</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td>
+                    <span>@Model.Name</span>
+                </td>
+                <td>
+                    <span>@Model.role</span>
+
+                </td>
+                <td>
+                    <div class="btn btn-warning">@Html.ActionLink("Update Name", "UpdateName", new { id = Model.Id })</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <p>
+        @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |*@
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</section>
+
+

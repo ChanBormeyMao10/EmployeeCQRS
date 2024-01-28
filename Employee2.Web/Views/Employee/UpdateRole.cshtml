@@ -1,0 +1,22 @@
+﻿@model Employee2.UpdateRole
+@{
+    ViewBag.Title = "Update Name";
+}
+
+
+@*Only Manager role can access this page*@
+
+<fieldset>
+    <div>
+        @using (Html.BeginForm())
+        {
+            <fieldset>
+                @Html.HiddenFor(m => m.Id)
+                <label>Role</label>
+                @Html.EnumDropDownListFor(model => model.NewRole)
+                <button type="submit" class="btn">Submit</button>
+            </fieldset>
+        }
+    </div>
+</fieldset>
+
